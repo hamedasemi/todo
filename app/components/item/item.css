@@ -1,0 +1,13 @@
+.todo {
+    
+}
+
+.button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.lineThrough{
+    text-decoration: line-through;
+}
