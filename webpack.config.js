@@ -22,6 +22,7 @@ export default {
             maxSize: 50000
         }
     },
+    stats: 'errors-warnings',
     module: {
         rules: [
             {

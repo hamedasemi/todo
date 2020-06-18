@@ -1,5 +1,10 @@
 .input {
-    background: none;
+    background: #cccccc;
     border: none;
     outline: none;
+    width: calc(100% - 40px);
+    font-size: inherit;
+    padding: 20px;
+    margin: 20px 20px 0 20px;
+    box-sizing: border-box;
 }

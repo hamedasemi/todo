@@ -13,12 +13,12 @@ const Input = () => {
     };
     
     const keyPressHandler = (event) => {
-        if (event.which === 13) {
+        if (event.which === 13 && todo) {
             dispatch({ type: 'SET_ITEM', payload: { content: todo, id: new Date().valueOf(), done: false } })
             setTodo('');
         }
     };
-    return <input className={styles.input} type="text" placeholder='Todo' value={todo} onKeyPress={keyPressHandler} onChange={changeHandler}/>
+    return <input className={styles.input} type="text" placeholder='Add todo' value={todo} onKeyPress={keyPressHandler} onChange={changeHandler}/>
 };
 
 export default Input;

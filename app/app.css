@@ -1,3 +1,10 @@
+body{
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    cursor: default;
+}
+
 .app {
-    background: gray;
+    /* background: gray; */
 }
