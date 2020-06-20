@@ -16,9 +16,22 @@ const Item = (props) => {
         dispatch({ type: 'UNSET_ITEM', payload: props.item });
     }
 
+    const moveUpHandler = (event) => {
+        event.stopPropagation();
+        dispatch({ type: 'MOVE_UP', payload: props.index });
+    }
+
+    const moveDownHandler = (event) => {
+        event.stopPropagation();
+        dispatch({ type: 'MOVE_DOWN', payload: props.index });
+    }
+
     return <div className={`${styles.item} ${props.item.done ? styles.lineThrough : ''}`} onClick={doneHandler} style={{ animationDelay: `.${props.delay}s` }}>
-        <div>{props.item.content}</div>
-        {/* <button className={styles.button} onClick={doneHandler}><Icon name="check" size="24px"></Icon></button> */}
+        <div className={styles.move}>
+            <button className={styles.button} onClick={moveUpHandler}><Icon name="up" size="24px"></Icon></button>
+            <button className={styles.button} onClick={moveDownHandler}><Icon name="down" size="24px"></Icon></button>
+        </div>
+        <div className={styles.content}>{props.item.content}</div>
         <button className={styles.button} onClick={removeHandler}><Icon name="cross" size="24px"></Icon></button>
     </div>
 };
