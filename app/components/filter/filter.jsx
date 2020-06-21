@@ -25,9 +25,15 @@ const Filter = (props) => {
     }, [state.items, state.filterDone, state.filterUndone]);
 
     return <div className={styles.filter}>
-        <button className={`${styles.button} ${state.filterDone ? styles.activeButton : ''}`} onClick={filterDoneHandler}><Icon className={styles.icon} name="filter" size="24px"></Icon>Done</button>
-        <button className={`${styles.button} ${state.filterUndone ? styles.activeButton : ''}`} onClick={filterUndoneHandler}><Icon className={styles.icon} name="filter" size="24px"></Icon>Undone</button>
-        <button className={`${styles.button} ${(state.filterDone || state.filterUndone) ? '' : styles.activeButton}`} onClick={filterNoneHandler}><Icon className={styles.icon} name="filter" size="24px"></Icon>None</button>
+        <button className={`${styles.button} ${state.filterDone ? styles.activeButton : ''}`} onClick={filterDoneHandler}>
+            <Icon className={styles.icon} name="filter" size="24px"></Icon>Done
+        </button>
+        <button className={`${styles.button} ${state.filterUndone ? styles.activeButton : ''}`} onClick={filterUndoneHandler}>
+            <Icon className={styles.icon} name="filter" size="24px"></Icon>Undone
+        </button>
+        <button className={`${styles.button} ${(state.filterDone || state.filterUndone) ? '' : styles.activeButton}`} onClick={filterNoneHandler}>
+            <Icon className={styles.icon} name="filter" size="24px"></Icon>All
+        </button>
     </div>
 };
 
