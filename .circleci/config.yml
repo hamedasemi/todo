@@ -1,0 +1,37 @@
+version: 2.1
+description: Build and deploy to Firebase.
+
+executors:
+  node:
+    docker:
+      - image: circleci/node:12.0.0
+      
+commands:
+  install:
+    steps:
+      - run: npm install
+  build: 
+    steps:
+      - run: npm run build
+  deploy:
+    steps:
+      - run: 'echo "{ \"projects\": { \"default\": \"hamed-todo\" } }" > .firebaserc'
+      - run: 'echo "{ \"hosting\": { \"public\": \"./build\", \"rewrites\": [ { \"source\": \"**\", \"destination\": \"/index.html\" } ] } }" > firebase.json'
+      - run: npm run firebase deploy -- --token "$FIREBASE_TOKEN" --debug
+
+jobs:
+  build-and-deploy:
+    executor: node
+    steps:
+      - checkout
+      - install
+      - build
+      - deploy
+
+workflows:
+  main:
+    jobs:
+      - build-and-deploy:
+          filters:
+            branches:
+              only: master
