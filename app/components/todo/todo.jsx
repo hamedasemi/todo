@@ -6,9 +6,9 @@ import reducer from './reducer';
 
 
 const TodoProvider = ({ children }) => {
-    let initialState = { items: [] };
+    let initialState = { items: [], filteredItems: [] };
 
-    if(localStorage.getItem('items')) {
+    if (localStorage.getItem('items')) {
         initialState = JSON.parse(localStorage.getItem('items'));
     }
 

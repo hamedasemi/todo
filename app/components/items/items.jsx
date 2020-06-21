@@ -8,7 +8,7 @@ import styles from './items.css';
 const Items = () => {
     const { state } = useContext(context);
 
-    return <div className={styles.items}>{state.items.map((item, index) => {
+    return <div className={styles.items}>{state.filteredItems.map((item, index) => {
         return <Item key={item.id} item={item} index={index} delay={index ? Math.floor(Math.random()*10)%10 : 0}></Item>
     })}</div>
 };
