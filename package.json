@@ -2,12 +2,6 @@
     "name": "todo-react-context",
     "private": true,
     "version": "1.0.0",
-    "jest": {
-        "verbose": true,
-        "moduleNameMapper": {
-            "\\.(css)$": "identity-obj-proxy"
-        }
-    },
     "babel": {
         "presets": [
             "@babel/preset-env",
@@ -19,25 +13,19 @@
         "webpack": "webpack",
         "webpack-dev-server": "webpack-dev-server",
         "start": "node --require @babel/register ./node_modules/.bin/webpack-dev-server --mode=development --devtool=source-map --hot",
-        "build": "node --require @babel/register ./node_modules/.bin/webpack --mode=production",
-        "test": "jest --watch"
+        "build": "node --require @babel/register ./node_modules/.bin/webpack --mode=production"
     },
     "devDependencies": {
         "@babel/core": "^7.9.6",
         "@babel/preset-env": "^7.9.6",
         "@babel/preset-react": "^7.9.4",
         "@babel/register": "^7.10.1",
-        "@testing-library/react": "^10.2.1",
         "autoprefixer": "^9.8.0",
         "babel-loader": "^8.1.0",
         "copy-webpack-plugin": "^6.0.2",
         "css-loader": "^3.5.3",
-        "eslint": "^7.2.0",
-        "eslint-plugin-react": "^7.20.0",
-        "firebase-tools": "^8.4.2",
+        "firebase-tools": "^8.4.3",
         "html-webpack-plugin": "^4.3.0",
-        "identity-obj-proxy": "^3.0.0",
-        "jest": "^26.0.1",
         "postcss-loader": "^3.0.0",
         "style-loader": "^1.2.1",
         "webpack": "^4.43.0",
@@ -46,7 +34,6 @@
     },
     "dependencies": {
         "react": "^16.13.1",
-        "react-dnd": "^11.1.3",
         "react-dom": "^16.13.1"
     }
 }
